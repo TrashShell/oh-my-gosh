@@ -16,7 +16,7 @@ print("\e[1;91m
 ");
 while(1){
     print("\e[1;33moh-my-gosh>\e[1;32m",unix.getenv("USER")~"@"~unix.getenv("NAME"),">\e[1;96m",unix.getcwd(),">\e[0m ");
-    var s=input();
+    var s=input("\n");
     if(s=="exit"){
         break;
     }else{
