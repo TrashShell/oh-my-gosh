@@ -14,12 +14,27 @@ print("\e[1;91m
 \e[1;9;94mYou say this is a shell? You must be kidding.\e[0m
 \e[1;9;94mOh my gosh, it is totally a trash! :)\e[0m\n
 ");
-while(1){
-    print("\e[1;33moh-my-gosh>\e[1;32m",unix.getenv("USER")~"@"~unix.getenv("NAME"),">\e[1;96m",unix.getcwd(),">\e[0m ");
-    var s=input("\n");
-    if(s=="exit"){
-        break;
-    }else{
-        system(s);
+
+var execute=func(cmd){
+    var cmdlist=split(" ",cmd);
+    if(size(cmdlist)==2 and cmdlist[0]=="cd"){
+        unix.chdir(cmdlist[1]);
+        return;
+    }elsif(cmdlist[0]=="whoami"){
+        println(unix.getenv("USER"),"\e[1;91m@oh-my-gosh\e[0m");
+        return;
     }
+    system(cmd);
 }
+
+func(){
+    while(1){
+        print("\e[1;33moh-my-gosh>\e[1;32m",unix.getenv("USER")~"@"~unix.getenv("NAME"),">\e[1;96m",unix.getcwd(),">\e[0m ");
+        var cmd=input("\n");
+        if(cmd=="exit"){
+            break;
+        }else{
+            execute(cmd);
+        }
+    }
+}();
