@@ -33,7 +33,7 @@ func(){
         var cmd=input("\n");
         if(cmd=="exit"){
             break;
-        }else{
+        }elsif(size(cmd)!=0){
             execute(cmd);
         }
     }
