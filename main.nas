@@ -11,8 +11,8 @@ print("\e[1;91m
 \e[0m
 \e[1;92mCopyright @ValKmjolnir 2022\e[0m
 \e[1;33mVersion 0.114
-\e[1;9;94mYou say this is a shell? You must be kidding.\e[0m
-\e[1;9;94mOh my gosh, it is totally a trash! :)\e[0m\n
+\e[1;94mYou say this is a shell? You must be kidding.\e[0m
+\e[1;94mOh my gosh, it is totally a trash! :)\e[0m\n
 ");
 
 var execute=func(cmd){
